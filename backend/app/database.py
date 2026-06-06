@@ -1,3 +1,5 @@
+from typing import Generator
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.ext.declarative import declarative_base
@@ -35,7 +37,7 @@ def init_db():
         raise
 
 
-def get_session() -> Session:
+def get_session() -> Generator[Session, None, None]:
     """Get database session"""
     db = SessionLocal()
     try:

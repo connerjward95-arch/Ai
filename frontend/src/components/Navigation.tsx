@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
   const location = useLocation();
 
   const navItems: NavItem[] = [
-    { path: '/', label: 'Chat', icon: '💬' },
+    { path: '/chat', label: 'Chat', icon: '💬' },
     { path: '/dashboard', label: 'Dashboard', icon: '📊' },
     { path: '/settings', label: 'Settings', icon: '⚙️' },
   ];

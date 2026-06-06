@@ -102,6 +102,18 @@ cd backend && python run.py
 cd frontend && npm start
 ```
 
+## Development shortcuts
+```bash
+# Install all dependencies and prepare the workspace
+make install
+
+# Run the backend in development mode
+make dev-backend
+
+# Run the frontend dev server
+make dev-frontend
+```
+
 ## Project Structure
 
 ```
@@ -157,6 +169,12 @@ AI/
 - `GET /api/v1/chat/history` - Get conversation history
 - `POST /api/v1/chat/clear` - Clear chat history
 - `WS /api/v1/ws/chat` - WebSocket for real-time chat
+- `GET /` - SPA entry when frontend is built and served by the backend
+
+#### Frontend Routes
+- `/chat` - Main AI chat interface
+- `/dashboard` - Analytics dashboard
+- `/settings` - AI configuration and preferences
 
 #### Learning & Analytics
 - `POST /api/v1/learn/update` - Update AI learning
@@ -236,11 +254,30 @@ cd frontend && npm test
 ### Build for Production
 
 ```bash
-# Backend
-gunicorn -w 4 -b 0.0.0.0:5000 app:app
+# Build frontend and validate backend
+make build-full
 
-# Frontend
-cd frontend && npm run build
+# Run production backend after build
+cd backend && gunicorn -w 4 -b 0.0.0.0:5000 app:app
+```
+
+### Android Build
+
+```bash
+make android-build
+```
+
+```bash
+# From the repository root
+make android-build
+```
+
+This target builds the React frontend, syncs Capacitor, and assembles a release APK.
+
+The generated output can be found at:
+
+```bash
+frontend/android/app/build/outputs/apk/release/app-release-unsigned.apk
 ```
 
 ## Contributing
