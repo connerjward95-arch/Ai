@@ -23,7 +23,7 @@ dev:
 	@echo "Frontend: http://localhost:3000"
 	@echo "Docs: http://localhost:5000/docs"
 
-make docker-up-dev:
+docker-up-dev:
 	docker-compose -f docker-compose.dev.yml up -d
 
 dev-backend:
@@ -49,14 +49,12 @@ clean:
 
 docker-up:
 	docker-compose up -d
-
-@echo "Containers started:"
+	@echo "Containers started:"
 	@docker-compose ps
 
 docker-down:
 	docker-compose down
-
-@echo "Containers stopped"
+	@echo "Containers stopped"
 
 docker-logs:
 	docker-compose logs -f

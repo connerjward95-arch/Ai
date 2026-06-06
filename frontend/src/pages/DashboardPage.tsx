@@ -9,15 +9,6 @@ const DashboardPage: React.FC = () => {
     sessionDuration: 1240,
   });
 
-  const chartData = [
-    { time: '00:00', accuracy: 65 },
-    { time: '04:00', accuracy: 72 },
-    { time: '08:00', accuracy: 78 },
-    { time: '12:00', accuracy: 82 },
-    { time: '16:00', accuracy: 85 },
-    { time: '20:00', accuracy: 87 },
-  ];
-
   return (
     <div className="dashboard-page">
       <div className="dashboard-header">
