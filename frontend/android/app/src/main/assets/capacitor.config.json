@@ -1,0 +1,6 @@
+{
+	"appId": "com.connerjward95.ai",
+	"appName": "AI_Learning_Machine",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
